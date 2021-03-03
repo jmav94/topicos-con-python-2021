@@ -111,3 +111,16 @@ elif dia == 5:
   print("Viernes")
 else:
   print("Es fin de semada")
+
+print("######## ejemplo edades #########")
+
+edad_minima = 18
+edad_maxima = 65
+
+# input de usuario
+edad = int(input("¿Tienes edad para trabajar? Captura tu edad: "))
+
+if edad >= edad_minima and edad <= edad_maxima:
+  print("Estas en edad para trabajar.")
+else:
+  print("No estas en edad para trabajar.")
