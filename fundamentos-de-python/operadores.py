@@ -40,4 +40,22 @@ print(operador3)
 print(operador4)
 print(operador5)
 
+# Operadores de incremento/decremento
+año = 2021
 
+# incremento
+#año = año + 1
+año += 1
+
+# decremento
+#año = año - 1
+año -= 1
+
+print(año)
+
+"""
+año++
+año--
+--año
+++año
+"""
