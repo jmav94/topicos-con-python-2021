@@ -37,7 +37,7 @@ if color == "rojo":
 else:
   print("Este no es mi color.")
 
-print("____________________________________________")
+print("########### condicionales comparando enteros con operadores relacionales ###############")
 
 # ejemplo 2
 
@@ -53,8 +53,8 @@ print("________________________________")
 
 # ejemplo 3 if anidados
 
-"""
-nombre = input("Captura tu nombre: ")
+
+"""nombre = input("Captura tu nombre: ")
 
 apellido = input("Captura tu apellido: ")
 
@@ -62,7 +62,17 @@ numControl = int(input("Captura tu numero de control: "))
 
 edad = int(input("Captura tu edad: "))
 
-semestre = int(input("Captura el semestre: "))
+semestre = int(input("Captura el semestre: "))"""
+
+nombre = "Juan"
+
+apellido = "Perez"
+
+numControl = 20100105
+
+edad = 23
+
+semestre = 9
 
 if semestre >= 7:
   print(f"{nombre} felicidades estas listo para elegir tu especialidad.")
@@ -73,14 +83,14 @@ if semestre >= 7:
     print("Por el momento no eres apto para realizar el servicio social.")
 else:
   print("No estas listo para seleccionar una especialidad.")
-"""
 
-print("-----------------------------------------------------------------")
+
+print("############## ejemplo con elif ##################")
 
 # ejemplo 4 elif
 
-dia = int(input("Capture el numero de dia de la semana: "))
-
+#dia = int(input("Capture el numero de dia de la semana: "))
+dia = 2
 """
 if dia == 1:
   print("Lunes")
@@ -112,15 +122,45 @@ elif dia == 5:
 else:
   print("Es fin de semada")
 
-print("######## ejemplo edades #########")
+print("######## ejemplo edades - operadores realacionales y AND #########")
 
 edad_minima = 18
 edad_maxima = 65
 
 # input de usuario
-edad = int(input("¿Tienes edad para trabajar? Captura tu edad: "))
-
+#edad = int(input("¿Tienes edad para trabajar? Captura tu edad: "))
+edad = 38
 if edad >= edad_minima and edad <= edad_maxima:
   print("Estas en edad para trabajar.")
 else:
   print("No estas en edad para trabajar.")
+
+
+print("######## ejemplo operadores relacionales y logicos con condicionales #########")
+
+pais = "Mexico"
+#pais = input("Capture el pais que desee validar: ")
+
+if pais == "Mexico" or pais == "España" or pais == "Colombia":
+  print("En este pais se habla español")
+else:
+  print("En este pais no se habla español")
+
+print("######## ejemplo operadores relacionales y logicos con condicionales + not #########")
+
+pais = "Mexico"
+#pais = input("Capture el pais que desee validar: ")
+
+if not (pais == "Mexico" or pais == "España" or pais == "Colombia"):
+  print(f"{pais} En este pais no se habla español")
+else:
+  print(f"{pais} En este pais se habla español")
+
+print("######## ejemplo operadores relacionales - !=  #########")
+
+pais = input("Capture el pais que desee validar: ")
+
+if pais != "Mexico" and pais != "España" and pais != "Colombia":
+  print(f"{pais} En este pais no se habla español")
+else:
+  print(f"{pais} En este pais se habla español")
