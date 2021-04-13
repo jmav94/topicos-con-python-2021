@@ -29,8 +29,40 @@ for frase in lista:
   #print(lista_frase)
   print("-" + frase.center(100))
 
+"""
+ Copiar
+
 ruta_original = str(pathlib.Path().absolute()) + "/mis_archivos/archivo.txt"
 ruta_nueva = str(pathlib.Path().absolute()) + "/mis_archivos/copia_archivo.txt"
 ruta_alternativa = str(pathlib.Path().absolute()) + "/../tester/tester.txt"
 
 shutil.copyfile(ruta_original, ruta_nueva)
+"""
+
+# Mover Archivos
+"""
+ruta_original = str(pathlib.Path().absolute()) + "/../tester/tester.txt"
+ruta_nueva = str(pathlib.Path().absolute()) + "/mis_archivos/archivo_moved.txt"
+
+shutil.move(ruta_original,ruta_nueva)
+"""
+
+# Eliminar Archivos
+
+import os
+"""
+ruta_nueva = str(pathlib.Path().absolute()) + "/mis_archivos/archivo_moved.txt"
+os.remove(ruta_nueva)
+"""
+
+# Comprobar si existe un archivo
+import os.path
+#ruta_comprobar = os.path.abspath("./") + "/mis_archivos/archivo_nuevo.txt"
+ruta_comprobar = "./archivos.py"
+
+if os.path.isfile(ruta_comprobar):
+  print("El archivo si existe")
+else:
+  print("El arhivo no existe")
+
+print(os.path.abspath("../"))
