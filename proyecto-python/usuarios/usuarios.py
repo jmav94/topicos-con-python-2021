@@ -34,7 +34,7 @@ class Usuario:
 
     return result
 
-  def login(self):
+  def identificar(self):
 
     # Consulta para comprobar si el usuario ingresado existe
     sql = "SELECT email,password FROM usuarios WHERE email = %s AND password = %s"
