@@ -41,10 +41,10 @@ class Usuario:
 
     # Cifrar contraseña
     cifrado = haslib.sha256()
-    cifrado.update(self.password.encode('encode'))
+    cifrado.update(self.password.encode('utf8'))
 
     # Datos para consultar
-    usuario = (self.email,cifrado.hezdigest())
+    usuario = (self.email,cifrado.hexdigest())
 
     cursor.execute(sql,usuario)
     result = cursor.fetchone()
