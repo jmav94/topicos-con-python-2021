@@ -1,66 +1,69 @@
 import usuarios.usuario as modelo
-# import notas.acciones
+#import notas.acciones
 
 class Acciones:
-  def registro(self):
-    print("\nBienvenido, vamos a registrarte en el sistema.")
 
-    nombre = input("Captura tu nombre:")
-    apellidos = input("Captura tus apellidos:")
-    email = input("Captura tu email:")
-    password = input("Captura tu constaseña:")
+    def registro(self):
+        print("\nOk!! Vamos a registrarte en el sistema...")
 
-    usuario = modelo.Usuario(nombre,apellidos,email,password)
-    registro = usuario.registrar()
+        nombre = input("¿Cual es tu nombre?: ")
+        apellidos = input("¿Cuales son tus apellidos?: ")
+        email = input("Introduce tu email: ")
+        password = input("Introduce tu contraseña: ")
 
-    if registro[0] >= 1:
-      print(f"\n Perfecto {registro[1].nombre} te has registrado con el email {registro[1].email}")
-    else:
-      print("Tu registro no fue existoso.")
+        usuario = modelo.Usuario(nombre, apellidos, email, password)
+        registro = usuario.registrar()
 
-  def login(self):
-    print("\nIdentificate con tus crdenciales.")
+        if registro[0] >= 1:
+            print(f"\nPerfecto {registro[1].nombre} te has registrado con el email {registro[1].email}")
 
-    try:
-      email = input("Introduce tu email: ")
-      password = input("Introduce tu contraseña: ")
+        else:
+            print("\nNo te has registrado correctamente!!!")
 
-      usuario = modelo.Ususario('','',email,password)
-      login = usuario.identificar()
 
-      if email == login[3]:
-        print(f"Bienvenido {login[1]} te has identificado correctamente {login[5]}.")
-        self.proximasAcciones(login)
+    def login(self):
+        print("\nVale!! Identificate en el sistema...")
 
-    except Exception as e:
-      print(type(e))
-      print(type(e).__name__)
-      print(f"Identificacion fallida, intentalo mas tarde.")
+        try:
+            email = input("Introduce tu email: ")
+            password = input("Introduce tu contraseña: ")
 
-  def proximasAcciones(self,usuario):
-    print("""
-      Acciones disponibles:
-      - Crear notas (CREATE)
-      - Mostrar notas (SELECT)
-      - Eliminar nota(s) (DELETE)
-      - Salir (SALIR)
-      """)
+            usuario = modelo.Usuario('', '', email, password)
+            login = usuario.identificar()
 
-    accion = input("¿Que accion deseas realizar?")
-    #realizar = notas.acciones.Acciones()
+            if email == login[3]:
+                print(f"\nBienvenido {login[1]}, te has identificado en el sistema el {login[5]}")
+                self.proximasAcciones(login)
 
-    if accion == "CREATE":
-      #realizar.crear(usuario)
-      self.proximasAcciones(usuario)
+        except Exception as e:
+            print(type(e))
+            print(type(e).__name__)
+            print(f"Login incorrecto!! Intentalo más tarde")
 
-    elif accion == "SELECT":
-      #realizar.mostrar(usuario)
-      self.proximasAciones(usuario)
+    def proximasAcciones(self, usuario):
+        print("""
+        Acciones disponibles:
+        - Crear nota (create)
+        - Mostrar tus notas (select)
+        - Eliminar nota (delete)
+        - Salir (salir)
+        """)
 
-    elif accion == "DELETE":
-      #realizar.borrar(usuario)
-      self.proximasAcciones(usuario)
+        accion = input("¿Que quieres hacer?: ")
+        hazEl = notas.acciones.Acciones()
 
-    elif accion == "SALIR":
-      print(f"hasta pronto {usuario[1]}")
-      exit()
+        if accion == "create":
+            hazEl.crear(usuario)
+            self.proximasAcciones(usuario)
+
+        elif accion == "select":
+            hazEl.mostrar(usuario)
+            self.proximasAcciones(usuario)
+
+        elif accion == "delete":
+            hazEl.borrar(usuario)
+            self.proximasAcciones(usuario)
+
+        elif accion == "salir":
+            print(f"Ok {usuario[1]}, hasta pronto!!!")
+            exit()
